@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% include 'navbar.html' %}
+{%  load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+
+<link href="{% static 'css/fonts.css'  %}" rel="stylesheet">
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="//www.fontstatic.com/f=dubai-medium,kawkab-light,alahed" />
+<style type="text/css">
+@font-face {
+    font-family: 'f1';
+    src: url('{% static '/fonts/Almudid.ttf' %}');
+    font-weight: 500;
+    font-style: normal;
+    font-size:9pt;
+}
+@font-face {
+    font-family: 'f2';
+    src: url('{% static '/fonts/Bahij_TheSansArabic-Bold.ttf' %}');
+    font-weight: 500;
+    font-style: normal;
+    font-size:18px;
+p.b{
+    font-family:'f2';
+    color: red;
+    font-size:18px;
+}
+p{
+    font-family:'f1';
+}
+
+
+
+
+
+
+</style>
+
+
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<div class="container align-items-center justify-content-center  ">
+<div class="row">
+        <div class="col-lg-4 col-md-3  "><center>
+            <img class="" src='{% static "imge/print.png"  %}' alt="Generic placeholder image"  width="140" height="140">
+          </center>
+            <h3 style="font-family:f1" class="row align-items-center justify-content-center  m   "><p class="b">الطابعات</p></h3>
+          <p>اذا كانت المشكله متعلقه بالطباعه سواء كانت ملحقه بالجهاز او يتم استخدام طابعه شبكيه قم بتسجيل المشكله من هذا الرابط</p>
+          <p><a class="btn btn-outline-success btn-lg" href="{% url 'printer' %}" role="button">تسجيل مشكله»</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 col-md-3  ">
+            <center><img class="" src='{% static "imge/Network.png"  %}' alt="Generic placeholder image" width="140" height="140">
+         </center> <h3 class="row align-items-center justify-content-center m"><p class="b">الشبكات</p></h3>
+          <p>اذا كانت المشكله متعلقه بالشبكات سواء مشكله فى الانترنت او مشكله فى الوصول لمورد  الشبكه سواء شبكه سلكيه او لا سلكيه قم بالتسجيل من هذا الرابط</p>
+          <p><a class="btn btn-outline-success btn-lg" href="{% url 'netwk'%}" role="button">تسجيل مشكله»</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 col-md-3 ">
+         <center>   <img class=" " src='{% static "imge/pc.png"  %}' alt="Generic placeholder image" width="140" height="140">
+         </center> <h3 class="row align-items-center justify-content-center m " >   <p class="b"> الاجهزه</p>     </h3>
+          <p>اذا كانت المشكله متعلقه بجهاز الحاسب الالى لديك سواء فى  فشل العتاد او فى احد البرامج الموجوده على الحاسب قم بتسجيل المشكله من هذا الرابط </p>
+          <p><a class="btn btn-outline-success btn-lg" href="{% url 'pc'%}" role="button">تسجيل مشكله»</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+</div>
+
+<div class="row">
+        <div class="col-lg-4 col-md-3  "><center>
+            <img class="" src='{% static "imge/pass.png"  %}' alt="Generic placeholder image"  width="140" height="140">
+          </center>
+            <h3 class="row align-items-center justify-content-center   "><p class="b">كلمات المرور</p></h3>
+          <p>اذا كانت المشكله متعلقه باسترجاع كلمات المرور الخاصه بالبريد الالكترونى او تطبيق الجوبتر او الانترنت سجل من هذا الرابط</p>
+          <p><a class="btn btn-outline-success btn-lg" href="{% url 'passrecovery' %}" role="button">تسجيل طلب»</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 col-md-3  ">
+            <center><img class="" src='{% static "imge/spares.jpg"  %}' alt="Generic placeholder image" width="140" height="140">
+         </center> <h3 class="row align-items-center justify-content-center "><p class="b">قطع الغيار</p></h3>
+          <p>لطلبات قطع الغيار الخاصه باجهزة الحاسب او احد مشتملاته قم بالتسجيل من هذا الرابط</p>
+          <p><a class="btn btn-outline-success btn-lg" href="{% url 'spareparts'%}" role="button">تسجيل طلب»</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4 col-md-3 ">
+         <center>   <img class=" " src='{% static "imge/cartridge.png"  %}' alt="Generic placeholder image" width="140" height="140">
+         </center> <h3 class="row align-items-center justify-content-center "><p class="b">الاحبار</p></h3>
+          <p>لطلبات الاحبار لاجهزة الطباعه المختلفه قم بتسجيل الطلب من هذا الرابط </p>
+          <p><a class="btn btn-outline-success btn-lg" href="{% url 'cartridge'%}" role="button">تسجيل طلب»</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div>
+</div>
+   {% endblock %}
+
+</body>
+</html>

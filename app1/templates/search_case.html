@@ -1,0 +1,194 @@
+{% include 'navbar3.html' %}
+{% load staticfiles %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<<script src='{% static "js/jquery-3.1.1.min.js"  %}'></script>
+<script src='{% static "js/bootstrap.min.js"  %}'></script>
+<script src='{% static "js/moment.min.js"  %}'></script>
+<script src='{% static "js/bootstrap-datetimepicker.js"  %}'></script>
+<link href='{% static   "css/bootstrap-datetimepicker.min.css"  %}' rel="stylesheet">
+
+
+
+
+
+
+
+<style type="text/css">
+
+@font-face {
+    font-family: 'fall';
+    src: url('{% static '/fonts/ext/Hacen Maghreb Bd.ttf' %}');
+    font-weight: 10;
+    font-style: normal;
+    font-size:11pt;
+}
+
+.form-control{
+    font-family:'fall';
+    font-size:12pt;
+    font-style: bold;
+}
+
+form .select{
+    font-family:'fall';
+    font-size:11px;
+    font-style: bold;
+    font-weight: 10;
+
+}
+
+@font-face {
+    font-family: 'num';
+    src: url('{% static '/fonts/Bahij_TheSansArabic-Bold.ttf' %}');
+    font-weight: 500;
+    font-style: normal;
+    font-size:11pt;
+}
+h3{
+    font-family:'num';
+    font-size:16pt;
+}
+    .box{
+
+        
+        display: none;
+        margin-top: 20px;
+
+    }
+
+
+
+.conatiner{
+margin-top: 70px;
+}
+
+.ta{
+margin-bottom: 70px;
+}
+.bbb{
+margin-bottom: 70px;
+}
+</style>
+
+<div class="conatiner" >
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+<!--<script type="text/javascript">-->
+
+<!--$(document).ready(function(){-->
+
+    <!--$('input[type="checkbox"]').click(function(){-->
+
+        <!--var inputValue = $(this).attr("value");-->
+
+        <!--$("." + inputValue).fadeToggle();-->
+
+    <!--});-->
+
+<!--});-->
+
+<!--</script>-->
+
+</head>
+
+<body>
+<center><img src="{% static 'imge/search.jpg' %}"/></center>
+ <form method='POST' class="form-control" action= ''>{% csrf_token %}
+<h3 class> الپحث داخل سچلات القضايا  </h3>
+<div class="row align-items-center justify-content-center">
+
+قم پاستخدام احد هذه الحقول ڤى الپحث  {{ f1|crispy }}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<input class= 'btn btn-info btn-lg' value="SEARCH" type=submit ">
+ </form>
+{% for obj in q %}
+<div class="row align-items-center  bbb justify-content-center"><div class="col-md-8">
+ <table class="table" border="2">
+  <tbody>
+    <tr class="table-info">
+
+      <td >{{ obj.case_name}}</td>
+      <td >اسم القضيه</td>
+
+    </tr>
+        <tr class="table-light">
+
+      <td>{{ obj.case_type}}</td>
+      <td>نوع القضيه</td>
+
+    </tr>
+      <tr class="table-info">
+      <td>{{ obj.court_name}}</td>
+      <td>اسم المحگمه</td>
+    </tr>
+      <tr class="">
+      <td>{{ obj.case_start_date}}</td>
+      <td>تاريخ پدا القضيه</td>
+    </tr>
+      <tr  class="table-info">
+      <td>{{ obj.lawyer_name}}</td>
+      <td>اسم المحامى</td>
+    </tr>
+        <tr>
+      <td>{{ obj.about_case}}</td>
+      <td >نپذه عن القضيه</td>
+     </tr>
+            <tr>
+     <td>{{ obj.last_case_update}}</td>
+
+      <td >اخر تحديث للقضيه</td>
+     </tr>
+  </tbody>
+</table>
+
+
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endfor %}
+
+ </div>
+
+
+<!-------------##############################################################################################----->
+
+
+
+
+   {% endblock %}

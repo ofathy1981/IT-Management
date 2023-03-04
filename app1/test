@@ -1,0 +1,244 @@
+@login_required
+# def reports(request):
+#     if request.user.id == 1:
+#         #-----------------computers count-----------------------
+#         # pclow = asset_pc.objects.get(Q(processor_type__icontains='Pentium')| Q(processor_type__icontains='celeron')).count()
+#         gpclow1 = asset_pc.objects.filter(processor_type__icontains='Pentium',bransh__icontains='جاردن سيتى').count()
+#         gpclow2 = asset_pc.objects.filter(processor_type__icontains='celeron',bransh__icontains='جاردن سيتى').count()
+#         gpclow  =gpclow1 + gpclow2
+#         mpclow1 = asset_pc.objects.filter(processor_type__icontains='Pentium',bransh__icontains='المهندسيين').count()
+#         mpclow2 = asset_pc.objects.filter(processor_type__icontains='celeron',bransh__icontains='المهندسيين').count()
+#         mpclow  =mpclow1 + mpclow2
+#         fpclow1 = asset_pc.objects.filter(processor_type__icontains='Pentium',bransh__icontains='الفواله'').count()
+#         fpclow2 = asset_pc.objects.filter(processor_type__icontains='celeron',bransh__icontains='الفواله'').count()
+#         fpclow  =fpclow1 + fpclow2
+#         cpclow1 = asset_pc.objects.filter(processor_type__icontains='Pentium',bransh__icontains='سيتى بنك').count()
+#         cpclow2 = asset_pc.objects.filter(processor_type__icontains='celeron',bransh__icontains='سيتى بنك').count()
+#         cpclow  =cpclow1 + cpclow2
+#         kpclow1 = asset_pc.objects.filter(processor_type__icontains='Pentium',bransh__icontains='قصر النيل').count()
+#         kpclow2 = asset_pc.objects.filter(processor_type__icontains='celeron',bransh__icontains='قصر النيل').count()
+#         kpclow  =kpclow1 + kpclow2
+#         tpclow1 = asset_pc.objects.filter(processor_type__icontains='Pentium',bransh__icontains='التوفيقيه').count()
+#         tpclow2 = asset_pc.objects.filter(processor_type__icontains='celeron',bransh__icontains='التوفيقيه').count()
+#         tpclow  =tpclow1 + tpclow2
+#
+#         #$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#         gpcmid1 = asset_pc.objects.filter(processor_type__icontains='Core2',bransh__icontains='جاردن سيتى').count()
+#         gpcmid2 = asset_pc.objects.filter(processor_type__icontains='Dual',bransh__icontains='جاردن سيتى').count()
+#         gpcmid = gpcmid1 + gpcmid2
+#         mpcmid1 = asset_pc.objects.filter(processor_type__icontains='Core2',bransh__icontains='المهندسيين').count()
+#         mpcmid2 = asset_pc.objects.filter(processor_type__icontains='Dual',bransh__icontains='المهندسيين').count()
+#         mpcmid = mpcmid1 + mpcmid2
+#         fpcmid1 = asset_pc.objects.filter(processor_type__icontains='Core2',bransh__icontains='الفواله'').count()
+#         fpcmid2 = asset_pc.objects.filter(processor_type__icontains='Dual',bransh__icontains='الفواله'').count()
+#         fpcmid = fpcmid1 + fpcmid2
+#         cpcmid1 = asset_pc.objects.filter(processor_type__icontains='Core2',bransh__icontains='سيتى بنك').count()
+#         cpcmid2 = asset_pc.objects.filter(processor_type__icontains='Dual',bransh__icontains='سيتى بنك').count()
+#         cpcmid = cpcmid1 + cpcmid2
+#         kpcmid1 = asset_pc.objects.filter(processor_type__icontains='Core2',bransh__icontains='قصر النيل').count()
+#         kpcmid2 = asset_pc.objects.filter(processor_type__icontains='Dual',bransh__icontains='قصر النيل').count()
+#         kpcmid = kpcmid1 + kpcmid2
+#         tpcmid1 = asset_pc.objects.filter(processor_type__icontains='Core2',bransh__icontains='التوفيقيه').count()
+#         tpcmid2 = asset_pc.objects.filter(processor_type__icontains='Dual',bransh__icontains='التوفيقيه').count()
+#         tpcmid = tpcmid1 + tpcmid2
+#         #l$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+#         gpchigh = asset_pc.objects.filter(processor_type__icontains='CoreI',bransh__icontains='جاردن سيتى').count()
+#         mpchigh = asset_pc.objects.filter(processor_type__icontains='CoreI',bransh__icontains='المهندسيين').count()
+#         fpchigh = asset_pc.objects.filter(processor_type__icontains='CoreI',bransh__icontains='الفواله'').count()
+#         cpchigh = asset_pc.objects.filter(processor_type__icontains='CoreI',bransh__icontains='سيتى بنك').count()
+#         kpchigh = asset_pc.objects.filter(processor_type__icontains='CoreI',bransh__icontains='قصر النيل').count()
+#         tpchigh = asset_pc.objects.filter(processor_type__icontains='CoreI',bransh__icontains='التوفيقيه').count()
+#
+#         allpcg = asset_pc.objects.filter(bransh__icontains='جاردن سيتى').count()
+#         allpcm = asset_pc.objects.filter(bransh__icontains='المهندسيين').count()
+#         allpcf = asset_pc.objects.filter(bransh__icontains='الفواله'').count()
+#         allpcc = asset_pc.objects.filter(bransh__icontains='سيتى بنك').count()
+#         allpck = asset_pc.objects.filter(bransh__icontains='قصر النيل').count()
+#         allpct = asset_pc.objects.filter(bransh__icontains='التوفيقيه').count()
+#
+#         #-----------------printers count-----------------------
+#         gprinterlaser = asset_printer.objects.filter(printer_type__icontains='Laser',bransh__icontains='جاردن سيتى').count()
+#         mprinterlaser = asset_printer.objects.filter(printer_type__icontains='Laser',bransh__icontains='المهندسيين').count()
+#         fprinterlaser = asset_printer.objects.filter(printer_type__icontains='Laser',bransh__icontains='الفواله').count()
+#         cprinterlaser = asset_printer.objects.filter(printer_type__icontains='Laser',bransh__icontains='سيتى بنك').count()
+#         kprinterlaser = asset_printer.objects.filter(printer_type__icontains='Laser',bransh__icontains='قصر النيل').count()
+#         tprinterlaser = asset_printer.objects.filter(printer_type__icontains='Laser',bransh__icontains='التوفيقيه').count()
+#
+#
+#         gprinterink = asset_printer.objects.filter(printer_type__icontains='Ink',bransh__icontains='جاردن سيتى').count()
+#         mprinterink = asset_printer.objects.filter(printer_type__icontains='Ink',bransh__icontains='المهندسيين').count()
+#         fprinterink = asset_printer.objects.filter(printer_type__icontains='Ink',bransh__icontains='الفواله'').count()
+#         cprinterink = asset_printer.objects.filter(Q(printer_type__icontains='Ink',bransh__icontains='سيتى بنك')|Q(printer_type__icontains='Desk',bransh__icontains='سيتى بنك')).count()
+#         kprinterink = asset_printer.objects.filter(printer_type__icontains='Ink',bransh__icontains='قصر النيل').count()
+#         tprinterink = asset_printer.objects.filter(printer_type__icontains='Ink',bransh__icontains='التوفيقيه').count()
+#
+#
+#
+#
+#         gprintermfp = asset_printer.objects.filter(printer_type__icontains='MFP',bransh__icontains='جاردن سيتى').count()
+#         mprintermfp = asset_printer.objects.filter(printer_type__icontains='MFP',bransh__icontains='المهندسيين').count()
+#         fprintermfp = asset_printer.objects.filter(printer_type__icontains='MFP',bransh__icontains='الفواله'').count()
+#         cprintermfp = asset_printer.objects.filter(printer_type__icontains='MFP',bransh__icontains='سيتى بنك').count()
+#         kprintermfp = asset_printer.objects.filter(printer_type__icontains='MFP',bransh__icontains='قصر النيل').count()
+#         tprintermfp = asset_printer.objects.filter(printer_type__icontains='MFP',bransh__icontains='التوفيقيه').count()
+#
+#
+#
+#
+#         allprinterg = asset_printer.objects.filter(bransh__icontains='جاردن سيتى').count()
+#         allprinterm = asset_printer.objects.filter(bransh__icontains='المهندسيين').count()
+#         allprinterf = asset_printer.objects.filter(bransh__icontains='الفواله').count()
+#         allprinterc = asset_printer.objects.filter(bransh__icontains='سيتى بنك').count()
+#         allprinterk = asset_printer.objects.filter(bransh__icontains='قصر النيل').count()
+#         allprintert = asset_printer.objects.filter(bransh__icontains='التوفيقيه').count()
+#
+#         #-----------------scanners count-----------------------
+#         gscannorm = asset_scanner.objects.filter(scanner_type__icontains='LowSpeed',bransh__icontains='جاردن سيتى').count()
+#         mscannorm = asset_scanner.objects.filter(scanner_type__icontains='LowSpeed',bransh__icontains='المهندسيين').count()
+#         fscannorm = asset_scanner.objects.filter(scanner_type__icontains='LowSpeed',bransh__icontains='الفواله'').count()
+#         cscannorm = asset_scanner.objects.filter(scanner_type__icontains='LowSpeed',bransh__icontains='سيتى بنك').count()
+#         kscannorm = asset_scanner.objects.filter(scanner_type__icontains='LowSpeed',bransh__icontains='قصر النيل').count()
+#         tscannorm = asset_scanner.objects.filter(scanner_type__icontains='LowSpeed',bransh__icontains='التوفيقيه').count()
+#
+#
+#
+#         gscanhigh = asset_scanner.objects.filter(scanner_type__icontains='HighSpeed',bransh__icontains='جاردن سيتى').count()
+#         mscanhigh = asset_scanner.objects.filter(scanner_type__icontains='HighSpeed',bransh__icontains='المهندسيين').count()
+#         fscanhigh = asset_scanner.objects.filter(scanner_type__icontains='HighSpeed',bransh__icontains='الفواله'').count()
+#         cscanhigh = asset_scanner.objects.filter(scanner_type__icontains='HighSpeed',bransh__icontains='سيتى بنك').count()
+#         kscanhigh = asset_scanner.objects.filter(scanner_type__icontains='HighSpeed',bransh__icontains='قصر النيل').count()
+#         tscanhigh = asset_scanner.objects.filter(scanner_type__icontains='HighSpeed',bransh__icontains='التوفيقيه').count()
+#
+#
+#
+#         allscanng = asset_scanner.objects.filter(bransh__icontains='جاردن سيتى').count()
+#         allscannm = asset_scanner.objects.filter(bransh__icontains='المهندسيين').count()
+#         allscannf = asset_scanner.objects.filter(bransh__icontains='الفواله'').count()
+#         allscannc = asset_scanner.objects.filter(bransh__icontains='سيتى بنك').count()
+#         allscannk = asset_scanner.objects.filter(bransh__icontains='قصر النيل').count()
+#         allscannt = asset_scanner.objects.filter(bransh__icontains='التوفيقيه').count()
+#
+#         #-----------------copiers count-----------------------
+#
+#         gcopierdata1 = asset_copier.objects.filter(conn_type__icontains='USB',bransh__icontains='جاردن سيتى').count()
+#         gcopierdata2 = asset_copier.objects.filter(conn_type__icontains='ETHERNET',bransh__icontains='جاردن سيتى').count()
+#         gcopierdata = gcopierdata1 + gcopierdata2
+#         mcopierdata1 = asset_copier.objects.filter(conn_type__icontains='USB',bransh__icontains='المهندسيين').count()
+#         mcopierdata2 = asset_copier.objects.filter(conn_type__icontains='ETHERNET',bransh__icontains='المهندسيين').count()
+#         mcopierdata = gcopierdata1 + gcopierdata2
+#         fcopierdata1 = asset_copier.objects.filter(conn_type__icontains='USB',bransh__icontains='الفواله'').count()
+#         fcopierdata2 = asset_copier.objects.filter(conn_type__icontains='ETHERNET',bransh__icontains='الفواله'').count()
+#         fcopierdata = gcopierdata1 + gcopierdata2
+#         ccopierdata1 = asset_copier.objects.filter(conn_type__icontains='USB',bransh__icontains='سيتى بنك').count()
+#         ccopierdata2 = asset_copier.objects.filter(conn_type__icontains='ETHERNET',bransh__icontains='سيتى بنك').count()
+#         ccopierdata = gcopierdata1 + gcopierdata2
+#         kcopierdata1 = asset_copier.objects.filter(conn_type__icontains='USB',bransh__icontains='قصر النيل').count()
+#         kcopierdata2 = asset_copier.objects.filter(conn_type__icontains='ETHERNET',bransh__icontains='قصر النيل').count()
+#         kcopierdata = gcopierdata1 + gcopierdata2
+#         tcopierdata1 = asset_copier.objects.filter(conn_type__icontains='USB',bransh__icontains='التوفيقيه').count()
+#         tcopierdata2 = asset_copier.objects.filter(conn_type__icontains='ETHERNET',bransh__icontains='التوفيقيه').count()
+#         tcopierdata = gcopierdata1 + gcopierdata2
+#
+#
+#
+#         gcopiernodata = asset_copier.objects.filter(conn_type__icontains='NODATA',bransh__icontains='جاردن سيتى').count()
+#         mcopiernodata = asset_copier.objects.filter(conn_type__icontains='NODATA',bransh__icontains='المهندسيين').count()
+#         fcopiernodata = asset_copier.objects.filter(conn_type__icontains='NODATA',bransh__icontains='الفواله'').count()
+#         ccopiernodata = asset_copier.objects.filter(conn_type__icontains='NODATA',bransh__icontains='سيتى بنك').count()
+#         kcopiernodata = asset_copier.objects.filter(conn_type__icontains='NODATA',bransh__icontains='قصر النيل').count()
+#         tcopiernodata = asset_copier.objects.filter(conn_type__icontains='NODATA',bransh__icontains='التوفيقيه').count()
+#
+#
+#
+#         allcopierm = asset_copier.objects.filter(bransh__icontains='المهندسيين').count()
+#         allcopierf = asset_copier.objects.filter(bransh__icontains='الفواله'').count()
+#         allcopierc = asset_copier.objects.filter(bransh__icontains='سيتى بنك').count()
+#         allcopierk = asset_copier.objects.filter(bransh__icontains='قصر النيل').count()
+#         allcopiert = asset_copier.objects.filter(bransh__icontains='التوفيقيه').count()
+#         return render(request,"reports.html",{"gpclow":gpclow,
+#         "mpclow":mpclow,
+#         "fpclow":fpclow,
+#         "cpclow":cpclow,
+#         "kpclow":kpclow,
+#         "tpclow":tpclow,
+#         "gpcmid":gpcmid,
+#         "mpcmid":mpcmid,
+#         "fpcmid":fpcmid,
+#         "cpcmid":cpcmid,
+#         "kpcmid":kpcmid,
+#         "tpcmid":tpcmid,
+#         "gpchigh":gpchigh,
+#         "mpchigh":mpchigh,
+#         "fpchigh":fpchigh,
+#         "cpchigh":cpchigh,
+#         "kpchigh":kpchigh,
+#         "tpchigh":tpchigh,
+#         "allpcg":allpcg,
+#         "allpcm":allpcm,
+#         "allpcf":allpcf,
+#         "allpcc":allpcc,
+#         "allpck":allpck,
+#         "allpct":allpct,
+#         "gprinterlaser":gprinterlaser,
+#         "mprinterlaser":mprinterlaser,
+#         "fprinterlaser":fprinterlaser,
+#         "cprinterlaser":cprinterlaser,
+#         "kprinterlaser":kprinterlaser,
+#         "tprinterlaser":tprinterlaser,
+#         "gprinterink":gprinterink,
+#         "mprinterink":mprinterink,
+#         "fprinterink":fprinterink,
+#         "cprinterink":cprinterink,
+#         "kprinterink":kprinterink,
+#         "tprinterink":tprinterink,
+#         "gprintermfp":gprintermfp,
+#         "mprintermfp":mprintermfp,
+#         "fprintermfp":fprintermfp,
+#         "cprintermfp":cprintermfp,
+#         "kprintermfp":kprintermfp,
+#         "tprintermfp":tprintermfp,
+#         "allprinterg":allprinterg,
+#         "allprinterm":allprinterm,
+#         "allprinterf":allprinterf,
+#         "allprinterc":allprinterc,
+#         "allprinterk":allprinterk,
+#         "allprintert":allprintert,
+#         "gscannorm":gscannorm,
+#         "mscannorm":mscannorm,
+#         "fscannorm":fscannorm,
+#         "cscannorm":cscannorm,
+#         "kscannorm":kscannorm,
+#         "tscannorm":tscannorm,
+#         "gscanhigh":gscanhigh,
+#         "mscanhigh":mscanhigh,
+#         "fscanhigh":fscanhigh,
+#         "cscanhigh":cscanhigh,
+#         "kscanhigh":kscanhigh,
+#         "tscanhigh":tscanhigh,
+#         "allscanng":allscanng,
+#         "allscannm":allscannm,
+#         "allscannf":allscannf,
+#         "allscannc":allscannc,
+#         "allscannk":allscannk,
+#         "allscannt":allscannt,
+#         "gcopierdata":gcopierdata,
+#         "mcopierdata":mcopierdata,
+#         "fcopierdata":fcopierdata,
+#         "ccopierdata":ccopierdata,
+#         "kcopierdata":kcopierdata,
+#         "tcopierdata":tcopierdata,
+#         "gcopiernodata":gcopiernodata,
+#         "mcopiernodata":mcopiernodata,
+#         "fcopiernodata":fcopiernodata,
+#         "ccopiernodata":ccopiernodata,
+#         "kcopiernodata":kcopiernodata,
+#         "tcopiernodata":tcopiernodata,
+#         "allcopierg":allcopierg,
+#         "allcopierm":allcopierm,
+#         "allcopierf":allcopierf,
+#         "allcopierc":allcopierc,
+#         "allcopierk":allcopierk,
+#         "allcopiert":allcopiert,
+#         })
+#     else:
+#         return HttpResponseRedirect(reverse('rest'))
